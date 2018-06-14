@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oInput01 = document.getElementById("input01");
+            var oFuhao = document.getElementById("fuhao");
+            var oInput02 = document.getElementById("input02");
+            var oBtn = document.getElementById("btn");
+            var oInput03 = document.getElementById("input03");
+
+            oBtn.onclick = function () {
+                var num1 = oInput01.value;
+                var num2 = oInput02.value;
+                var fuhao = oFuhao.value;
+                if (num1 == "" || num2 == "") {
+                    alert("输入框不能为空~");
+                    return;
+                }
+
+                if (num2 == 0) {
+                    alert("分母不能为0~");
+                    return;
+                }
+
+                switch (fuhao) {
+                    case '0':
+                        oInput03.value = ((((num1-0)*100) + ((num2-0)*100))/100);
+                        break;
+                    case '1':
+                        oInput03.value = ((((num1-0)*100) - ((num2-0)*100))/100);
+                        break;
+                    case '2':
+                        oInput03.value = ((((num1-0)*100) * ((num2-0)*100))/10000);
+                        break;
+                    case '3':
+                        oInput03.value = (((num1-0)*100) / ((num2-0)*100));
+                        break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>计算器</h1>
+    <input type="text" id="input01">
+    <select id="fuhao">
+        <option value="0">+</option>
+        <option value="1">-</option>
+        <option value="2">*</option>
+        <option value="3">/</option>
+    </select>
+    <input type="text" id="input02">
+    <input id="btn" type="button" value="=" />
+    <input type="text" id="input03">
+</body>
+</html>
