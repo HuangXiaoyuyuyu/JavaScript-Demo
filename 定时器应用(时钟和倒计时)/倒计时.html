@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oDiv = document.getElementById("div");
+
+            function time() {
+                var date = new Date();
+                var future = new Date(2018,5,19,13,33,0);
+                var lefts = (future - date) / 1000;
+                var day = parseInt(lefts / 86400);
+                var hour = parseInt((lefts % 86400) / 3600);
+                var minute = parseInt((lefts % 3600) / 60);
+                var second = parseInt(lefts % 60);
+
+                if (lefts <= 1) {
+                    window.location.href = "http://www.baidu.com";
+                }
+
+                var str = "距离目标时间还剩 " + todouble(day) + "天" + todouble(hour) + "时" + todouble(minute) + "分" + todouble(second) + "秒";
+                oDiv.innerHTML = str;
+
+                function todouble(num) {
+                    if (num < 10) {
+                        return '0' + num;
+                    }else {
+                        return num;
+                    }
+                }
+            }
+            time();
+            setInterval(time,1000);
+        }
+    </script>
+</head>
+<body>
+    <div id="div"></div>
+</body>
+</html>

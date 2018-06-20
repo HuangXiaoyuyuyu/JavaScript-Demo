@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oDiv = document.getElementById("div");
+
+            function timego() {
+                var now = new Date();
+
+                var year = now.getFullYear();
+                var month = now.getMonth()+1;
+                var day = now.getDate();
+                var week = now.getDay();
+                var hour = now.getHours();
+                var min = now.getMinutes();
+                var sec = now.getSeconds();
+
+                function toweek(num) {
+                    switch (num) {
+                        case 0:
+                            return'天';
+                            break;
+                        case 1:
+                            return'一';
+                            break;
+                        case 2:
+                            return'二';
+                            break;
+                        case 3:
+                            return'三';
+                            break;
+                        case 4:
+                            return'四';
+                            break;
+                        case 5:
+                            return'五';
+                            break;
+                        case 6:
+                            return'六';
+                            break;
+                    }
+                }
+
+                function todouble(num) {
+                    if (num < 10) {
+                        return '0' + num ;
+                    }else {
+                        return num;
+                    }
+                }
+
+                var str = '当前时间是：'+year+'年'+todouble(month)+'月'+todouble(day)+'日'+'  '+'星期'+toweek(week)+'  '+todouble(hour)+':'+todouble(min)+':'+todouble(sec);
+                //alert(str);
+                oDiv.innerHTML = str;
+            }
+            timego();
+
+            setInterval(timego,1000);
+        }
+    </script>
+</head>
+<body>
+    <div id="div"></div>
+</body>
+</html>
