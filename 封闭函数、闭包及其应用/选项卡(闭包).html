@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var oButton = document.getElementById('button').getElementsByTagName('input');
+            var oContent = document.getElementById('content').getElementsByTagName('div');
+            for(var i=0; i<oButton.length; i++) {
+                (function (i) {
+                    oButton[i].onclick = function () {
+                        for(var j=0; j<oButton.length; j++) {
+                            oButton[j].className = '';
+                            oContent[j].className = '';
+                        }
+                        this.className = 'active';
+                        oContent[i].className = 'active';
+                    }
+                })(i);
+            }
+        }
+
+    </script>
+    <style type="text/css">
+        .button{
+            width: 500px;
+            height: 50px;
+        }
+        .button input{
+            width: 100px;
+            height: 50px;
+            background-color: #ddd;
+            color: #666;
+            border: 0px;
+        }
+        .button input.active{
+            background-color: gold;
+        }
+        .content div{
+            height: 300px;
+            width: 500px;
+            background-color: gold;
+            display: none;
+            line-height: 300px;
+            text-align: center;
+        }
+        .content div.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="button" id="button">
+        <input type="button" value="选项卡一" class="active">
+        <input type="button" value="选项卡二">
+        <input type="button" value="选项卡三">
+    </div>
+    <div class="content" id="content">
+        <div class="active">这是内容一</div>
+        <div>这是内容二</div>
+        <div>这是内容三</div>
+    </div>
+</body>
+</html>

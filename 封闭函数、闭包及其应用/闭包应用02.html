@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /* 私有变量计数器  外部无法访问  避免全局变量的污染 */
+        var count = (function () {
+            var a = 0;
+            function bb() {
+                a++;
+                alert(a);
+            }
+            return bb;
+        })();
+
+        count();
+        count();
+        count();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

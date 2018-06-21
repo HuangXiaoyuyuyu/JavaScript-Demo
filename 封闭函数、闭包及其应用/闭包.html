@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        function aa(b) {
+            var a = 12;
+            function bb() {
+                alert(a + "," +b);
+            }
+            return bb;
+        }
+
+        var cc = aa(24);
+        cc();
+
+
+
+        /* 封闭函数写法 */
+        var dd = (function(b) {
+            var a = 12;
+            function bb() {
+                alert(a + "," +b);
+            }
+            return bb;
+        })(12);
+        dd();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
