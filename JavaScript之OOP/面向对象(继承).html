@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+    <script type="text/javascript">
+
+        function SuperClass(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        SuperClass.prototype.showname = function () {
+            alert(this.name);
+        }
+        SuperClass.prototype.showage = function () {
+            alert(this.age);
+        }
+
+
+        function SubClass(name,age,job) {
+            SuperClass.call(this,name,age);
+            this.job = job;
+        }
+        SubClass.prototype = new SuperClass();
+        SubClass.prototype.showjob = function () {
+            alert(this.job);
+        }
+
+        var sub = new SubClass('Tom',18,'engineer');
+        sub.showname();
+        sub.showage();
+        sub.showjob();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

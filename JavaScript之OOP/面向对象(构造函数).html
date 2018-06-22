@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+    <script type="text/javascript">
+        function Person(name,age,job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.show = function () {
+                alert(this.name + "   " + this.age + "   " + this.job);
+            }
+        }
+
+        var Tom = new Person('Tom',18,'engineer');
+        var Jack = new Person('Jack',16,'worker');
+        Tom.show();
+        Jack.show();
+        alert(Tom.show == Jack.show);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

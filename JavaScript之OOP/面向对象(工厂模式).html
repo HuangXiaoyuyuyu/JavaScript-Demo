@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工厂模式</title>
+    <script type="text/javascript">
+        function Person(name,age,job) {
+            var o = new Object();
+            o.name = name;
+            o.age = age;
+            o.job = job;
+            o.show = function () {
+                alert(this.name + "   " + this.age + "    " + this.job);
+            }
+            return o;
+        }
+        var Tom = Person('Tom',20,'java');
+        var Jack = Person('Jack',28,'worker');
+        Tom.show();
+        Jack.show();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

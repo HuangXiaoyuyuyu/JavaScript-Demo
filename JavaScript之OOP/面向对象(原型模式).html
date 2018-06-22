@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型模式</title>
+    <script type="text/javascript">
+        function Person(name,age,job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+        }
+        Person.prototype.show = function(){
+            alert(this.name + "   " +this.age + "   " + this.job);
+        }
+        var Tom = new Person('Tom',18,'engineer');
+        var Jack = new Person('Jack',16,'worker');
+        Tom.show();
+        Jack.show();
+        alert(Tom.show == Jack.show);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
