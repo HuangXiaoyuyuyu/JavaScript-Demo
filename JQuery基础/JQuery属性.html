@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery属性</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            //alert($('.div').html());
+
+            $('.div').html('<a href="#">666</a>');
+
+            $('.div').attr({title:'这是一个div!'});
+
+            //alert($('.div').attr('class'));
+
+            /* 读写checkbox的状态用prop */
+            alert($('#check').prop('checked'));
+
+            $('#check').prop({checked:true});
+        });
+
+    </script>
+</head>
+<body>
+    <div class="div">This is a div element</div>
+
+    <input type="checkbox" name="" id="check" >多选
+</body>
+</html>

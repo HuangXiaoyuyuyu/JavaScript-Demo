@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery选择器</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#div').css({color:'red'});
+            $('.box').css({color:'blue',fontSize:'30px'});
+            $('.list li').css({background:'pink',fontSize:'30px',color:'#fff'});
+        });
+    </script>
+    <style type="text/css">
+        #div{
+            color: gold;
+        }
+        .box{
+            color: gold;
+        }
+        .list li{
+            color: gold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">This  is  the  first  div</div>
+    <div class="box">This  is  the  second  div</div>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

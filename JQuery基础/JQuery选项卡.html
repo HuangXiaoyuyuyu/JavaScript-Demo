@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery选项卡</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('.button input').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                /* $(this).index()获取当前按钮所在层级范围的索引值 */
+                $('.content div').eq($(this).index()).addClass('active').siblings().removeClass('active');
+            })
+        });
+
+    </script>
+    <style type="text/css">
+        .button{
+            width: 500px;
+            height: 50px;
+        }
+        .button input{
+            width: 100px;
+            height: 50px;
+            background-color: #ddd;
+            color: #666;
+            border: 0px;
+        }
+        .button input.active{
+            background-color: gold;
+        }
+        .content div{
+            height: 300px;
+            width: 500px;
+            background-color: gold;
+            display: none;
+            line-height: 300px;
+            text-align: center;
+        }
+        .content div.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="button" id="button">
+        <input type="button" value="选项卡一" class="active">
+        <input type="button" value="选项卡二">
+        <input type="button" value="选项卡三">
+    </div>
+    <div class="content" id="content">
+        <div class="active">这是内容一</div>
+        <div>这是内容二</div>
+        <div>这是内容三</div>
+    </div>
+</body>
+</html>

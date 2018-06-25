@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery特殊效果</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('#button').click(function () {
+                /* 渐隐显示和隐藏 */
+                $('#div').slideToggle() ;
+            })
+        });
+
+    </script>
+    <style type="text/css">
+       #div{
+           width: 200px;
+           height: 200px;
+           background-color: red;
+       }
+    </style>
+</head>
+<body>
+    <input type="button" id="button" value="效果">
+    <div id="div"></div>
+</body>
+</html>

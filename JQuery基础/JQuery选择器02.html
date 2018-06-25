@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery选择器02</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            /*
+             * next()同级的下一个元素   nextAll()同级下的所有元素
+             * prev()同级的上一个元素   prevAll()同级上的所有元素
+             */
+            $('#div').nextAll('.box').css({color:'red'});
+            /* 选择上一级别的父元素 */
+            $('#span1').parent().css({width:'100px',height:'100px',background:'gold'});
+            /* 选择离自己最近的元素，可以是父级， 也可以是子级 */
+            $('#span2').closest('div').css({width:'150px',height:'150px',background:'red'});
+
+            /*
+            *和$('.list li')的区别是：
+            *   原始的选择集不一样  下面的可以通过end()回到父级
+            */
+            $('.list').children().css({background:'gold',marginBottom:'10px'})
+                .end().css({background:'green'});
+
+            $('.list2 li:first').siblings().css({color:'red'});
+        });
+    </script>
+</head>
+<body>
+    <div id="div">This is the first DIV</div>
+    <div class="box">This is the second DIV</div>
+    <p>This is a Paragrph A</p>
+    <p>This is a Paragrph B</p>
+    <p>This is a Paragrph C</p>
+    <a href="#">This is a A link</a>
+    <div id="div2">
+        <a href="#">This is A tag</a>
+        <span id="span1">This is span element</span>
+    </div>
+    <div>
+        <p>
+            <a href="#">This is another A tag</a>
+            <span id="span2">This is another span element</span>
+        </p>
+    </div>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+    <ul class="list2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>
