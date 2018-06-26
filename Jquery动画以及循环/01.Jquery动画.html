@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery动画</title>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        
+        $(function () {
+            /*
+            *参数：
+            * 1.属性设置{param1：value1，param2：value2}
+            * 2.speed 时间  ms
+            * 3.swing 默认值  开始和结束慢速，中间快速
+            *   linear 匀速
+            * 4.回调函数
+            */
+
+            $('#div').animate({width:'1800px',height:'900px'},1000,function () {
+                $(this).animate({width:'10px',height:'10px'},1000)
+            })
+
+        })
+        
+    </script>
+    <style type="text/css">
+        .div{
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="div" class="div"></div>
+</body>
+</html>
