@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素绝对位置</title>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        
+        $(function () {
+            var pos = $('div').eq(2).offset();
+            //console.log(pos);
+            //alert('('+pos.left+','+pos.top+')');
+            var w = $('.pos').outerWidth();
+            var h = $('.pos').outerHeight();
+            $('.pop').css({left:pos.left+w,top:pos.top});
+            $('.pos').mouseover(function () {
+                $('.pop').show();
+            })
+            $('.pos').mouseout(function () {
+                $('.pop').hide();
+            })
+
+        })
+        
+    </script>
+    <style type="text/css">
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #09E0B5;
+            margin-bottom: 10px;
+        }
+        .pos{
+            margin-left: 500px;
+        }
+        .pop{
+            width: 100px;
+            height: 100px;
+            background-color: #7C0070;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box pos"></div>
+    <div class="box"></div>
+
+    <div class="pop"> 提示信息！</div>
+</body>
+</html>
