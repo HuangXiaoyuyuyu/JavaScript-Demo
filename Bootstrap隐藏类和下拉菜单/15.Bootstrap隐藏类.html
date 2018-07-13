@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap隐藏类</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <style>
+        div[class*='col-']{
+            background-color: aqua;
+            border: 1px solid #000000;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 hidden-lg">col-lg-3---1</div>
+            <div class="col-lg-3 hidden-md hidden-xs">col-lg-3---2</div>
+            <div class="col-lg-3 hidden-lg hidden-sm">col-lg-3---3</div>
+            <div class="col-lg-3">col-lg-3---4</div>
+        </div>
+    </div>
+</body>
+</html>
